@@ -17,10 +17,16 @@
                     Console.WriteLine("Invalid option, try again:");
                     input = Console.ReadLine();
                 }
-                else
+                else if(input.ToLower() == "sql" ||  input.ToLower() == "mongo" ||  input.ToLower() == "list")
                 {
                     break;
                 }
+                else
+                {
+                    Console.WriteLine("Invalid option, try again:");
+                    input = Console.ReadLine();
+                }
+                
             }
             var dataBase = DataAccessFactory.CreateDataAccess(input);
             dataBase.LoadData();
